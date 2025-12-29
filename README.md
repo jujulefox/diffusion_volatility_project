@@ -2,7 +2,7 @@
 
 ## Why I Built This
 
-As a Physics and Mathematics student, I have always been fascinated by how the laws of nature—like the random walk of a particle—can explain the seemingly chaotic movements of global markets. This project is a technical "deep dive" into financial volatility viewed through a physics lens, demonstrating that stock price uncertainty isn't just a metaphor; it's a measurable physical phenomenon.
+As a Physics and Mathematics student, I was interested in how the laws of nature, like the random walk of a particle, can explain the seemingly chaotic and artificial movements of global markets. This project is a technical "deep dive" into financial volatility viewed through a physics lens, demonstrating that stock price uncertainty is in reality a measurable physical phenomenon.
 
 - **Key Finding**: During this simulation, I mathematically verified that the Particle Std Ratio (0.988) and the Stock Vol Ratio (0.997) converge almost perfectly to their theoretical values. This proves that stock prices follow the exact same $\sqrt{n}$ law as a diffusing molecule in a laboratory.
 
@@ -73,7 +73,7 @@ python diffusion_volatility.py
 ## Insights for Quants
 
 - **Vectorization**: The simulation avoids slow Python loops, using NumPy's broadcasting to simulate thousands of paths simultaneously, mimicking production-level Monte Carlo performance.
-- **The "Itô" Term**: The inclusion of $-\frac{1}{2}\sigma^2$ in the GBM formula accounts for the difference between the median and mean of a log-normal distribution—a crucial detail in derivative pricing.
+- **The "Itô" Term**: The inclusion of $-\frac{1}{2}\sigma^2$ in the GBM formula accounts for the difference between the median and mean of a log-normal distribution (important in derivative pricing). 
 
 ## Author
 
@@ -82,3 +82,4 @@ python diffusion_volatility.py
 ## License
 
 MIT License. For educational and demonstrative purposes.
+
