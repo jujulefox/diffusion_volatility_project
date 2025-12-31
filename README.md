@@ -81,5 +81,6 @@ python diffusion_volatility.py
 
 ## License
 
-MIT License. For educational and demonstrative purposes.
+For educational and demonstrative purposes.
+
 
