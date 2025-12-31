@@ -77,7 +77,7 @@ def geometric_brownian_motion(S0=100, mu=0.05, sigma=0.2, n_paths=100, n_steps=1
     # Calculate log returns
     log_returns = drift_term + diffusion_term
     
-    # Apply cumsum to get cumulative log returns, then exponentiate
+    # get cumulative log returns, then exponentiate
     cumulative_log_returns = np.cumsum(log_returns, axis=1)
     stock_paths[:, 1:] = S0 * np.exp(cumulative_log_returns)
     
@@ -283,7 +283,7 @@ def plot_comparison(particle_positions, stock_paths, mu=0.05, sigma=0.2):
 
 def main():
     """
-    Main function to run the simulation and create visualizations.
+    Main function to run the simulation and create graphs.
     """
     # Parameters
     n_particles = 1000
@@ -314,18 +314,17 @@ def main():
     print(f"  Particle Std Ratio: {comparison['comparison']['particle_std_vs_theoretical']:.3f}")
     print(f"  Stock Vol Ratio: {comparison['comparison']['stock_vol_empirical_vs_theoretical']:.3f}")
     
-    # Create plots
+    # Create, save, and display plots
     print("\nGenerating plots...")
     fig = plot_comparison(particle_positions, stock_paths, mu=mu, sigma=sigma)
     
-    # Save figure with high resolution
     plt.savefig('diffusion_volatility_comparison_v2.png', dpi=300, bbox_inches='tight')
     print("Plot saved as 'diffusion_volatility_comparison_v2.png'")
     
-    # Show plot
     plt.show()
 
 
 if __name__ == "__main__":
     main()
+
 
